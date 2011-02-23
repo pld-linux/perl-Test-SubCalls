@@ -13,14 +13,14 @@ Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://search.cpan.org/CPAN/authors/id/A/AD/ADAMK/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Test/ADAMK/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	975a9fe8d93ef0298fc1bca8f03166e1
 URL:		http://search.cpan.org/dist/Test-SubCalls/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl(Hook::LexWrap) >= 0.20
 BuildRequires:	perl-ExtUtils-MakeMaker >= 6.42
+BuildRequires:	perl-Hook-LexWrap >= 0.20
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -36,7 +36,12 @@ way in association with your normal Test::More (or similar) test
 scripts.
 
 %description -l pl.UTF-8
-Moduł ten śledzi liczbę razy ile został wywołany podprogram.
+Są różne sytuacje (jak testowanie kodu cache'ującego), kiedy chcemy
+wykonać ileś testów, a następnie sprawdzić, że jakaś zagnieżdżona
+procedura została wywołana ileś razy.
+
+Ten moduł udostępnia funkcje do wykonywania takich testów w zwykłych
+skryptach testowych Test::More (lub podobnych).
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -60,5 +65,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README
-%{perl_vendorlib}/Test/*.pm
-%{_mandir}/man3/*
+%{perl_vendorlib}/Test/SubCalls.pm
+%{_mandir}/man3/Test::SubCalls.3pm*
