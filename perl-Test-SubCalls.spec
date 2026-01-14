@@ -8,7 +8,7 @@ Summary:	Test::SubCalls - Track the number of times subs are called
 Summary(pl.UTF-8):	Test::SubCalls - śledzi liczbę razy ile został wywołany podprogram
 Name:		perl-Test-SubCalls
 Version:	1.09
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
