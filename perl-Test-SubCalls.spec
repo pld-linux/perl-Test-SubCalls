@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	tests		# do not perform "make test"
+%bcond_without	tests		# unit tests
 #
 %define	pdir	Test
 %define	pnam	SubCalls
@@ -12,14 +12,16 @@ Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Test/ETHER/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	https://www.cpan.org/modules/by-module/Test/ETHER/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	970b851e8a2cfd951040979070a76929
-URL:		http://search.cpan.org/dist/Test-SubCalls/
+URL:		https://metacpan.org/dist/Test-SubCalls
+BuildRequires:	perl-ExtUtils-MakeMaker >= 6.42
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl-ExtUtils-MakeMaker >= 6.42
+BuildRequires:	perl(File::Spec) >= 0.80
 BuildRequires:	perl-Hook-LexWrap >= 0.20
+BuildRequires:	perl-Test-Simple >= 0.42
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
