@@ -7,13 +7,13 @@
 Summary:	Test::SubCalls - Track the number of times subs are called
 Summary(pl.UTF-8):	Test::SubCalls - śledzi liczbę razy ile został wywołany podprogram
 Name:		perl-Test-SubCalls
-Version:	1.09
-Release:	2
+Version:	1.10
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Test/ADAMK/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	975a9fe8d93ef0298fc1bca8f03166e1
+Source0:	http://www.cpan.org/modules/by-module/Test/ETHER/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	970b851e8a2cfd951040979070a76929
 URL:		http://search.cpan.org/dist/Test-SubCalls/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
